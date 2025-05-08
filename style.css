@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background: url('bg3.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: animateBg 5s linear infinite;
+}
+@keyframes animateBg {
+    100% {
+      filter: hue-rotate(360deg);
+    }
+}
+
+#gameContainer{ 
+    display: flex;
+    justify-content: center;
+}
+
+#cellContainer {
+    display: none;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    background: transparent;
+    backdrop-filter: blur(15px);
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 1s ease-in-out;
+}
+  
+ #cellContainer.show {
+    display: grid;
+    opacity: 1;
+    pointer-events: auto;
+}
+  
+.cell{
+    border: 2px solid rgb(255, 255, 255);
+    font-size: 8vw;
+    box-shadow: 0 0 0 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.cell:hover{
+    background-color: rgb(234, 239, 187);
+}
+
+.gameInfo{
+    padding: 0 40px;
+    font-family:  "Tagesschrift", system-ui;
+    color: white;
+}
+
+.gameInfo h1{
+    font-size: 2.5rem;
+}
+
+#startBtn{
+    padding: 5px 25px;
+    margin: 20px 0 0;
+    background: #f3e7f9;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family:  "Tagesschrift", system-ui;
+    font-size: 18px;
+    font-weight: bolder;
+}
+#startBtn:hover{
+    background-color: #e1adfa;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgb(255, 255, 255);
+}
+
+#statusText {
+    font-size: 22px;
+    margin : 0px 0px 25px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#restartBtn {
+    padding: 0px;
+    background: #f3e7f9;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family:  "Tagesschrift", system-ui;
+    font-size: 18px;
+    font-weight: bolder;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+#restartBtn:hover{
+    background-color: #e1adfa;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgb(255, 255, 255);
+}
+
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+#imagewin{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+}
+#imagetie{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+}
+
+@media screen and (max-width: 950px)
+{
+    #gameContainer{
+        flex-wrap: wrap;
+    }
+    .gameInfo{
+        margin: 34px;
+        padding: 0;
+        justify-content: center;
+    }
+    .gameInfo h1{
+        font-size: 2rem;
+    }
+    #cellContainer { 
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+    #cell{
+        font-size: 12vw;
+    }
+}
