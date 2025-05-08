@@ -35,7 +35,7 @@ To run the game locally on your machine, follow these steps:
    - Background image (`bg3.jpg`)
    - GIF files (`celebrate1.gif` and `sad.gif`)
    - Sound files (`music.mp3`, `win.mp3`, and `draw.mp3`)
-3. Open the `index.html` file in a modern web browser[11]
+3. Open the `index.html` file in a modern web browser
 
 ## How to Play
 
